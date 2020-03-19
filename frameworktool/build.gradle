@@ -41,6 +41,9 @@ dependencies {
 
     // okhttp
     api 'com.squareup.okhttp3:okhttp:4.1.1'
+    //RxJava
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.12'
 
     // Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofitVersion"

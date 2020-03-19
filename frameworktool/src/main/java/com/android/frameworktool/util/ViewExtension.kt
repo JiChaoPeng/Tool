@@ -1,11 +1,18 @@
 package com.android.frameworktool.util
 
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 
 /**
  * Created by jichaopeng
  * 2020/3/18
  */
+
+fun ViewGroup.appInflate(@LayoutRes resId: Int, attachToRoot: Boolean = false): View {
+    return LayoutInflater.from(context).inflate(resId, this, attachToRoot)
+}
 
 class SingleOnClickListener(private val listener: ((v: View?) -> Unit)?) : View.OnClickListener {
     private var lastTime: Long = 0L

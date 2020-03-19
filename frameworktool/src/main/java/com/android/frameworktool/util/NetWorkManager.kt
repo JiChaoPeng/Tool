@@ -7,12 +7,21 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 /**
  * Created by jichaopeng
  * 2020/3/18
  */
 class NetWorkManager {
+    companion object {
+        private var netWorkManager: Retrofit? = null
+        fun getNetworkManager(host: String): Retrofit {
+            return if (netWorkManager == null) {
+                NetWorkManager().initNetWorkManager(host)
+            } else {
+                netWorkManager!!
+            }
+        }
+    }
 
     fun initNetWorkManager(baseUrl: String): Retrofit {
         val okHttpClient: OkHttpClient by lazy {
@@ -33,5 +42,4 @@ class NetWorkManager {
             .client(okHttpClient)
             .build()
     }
-
 }
