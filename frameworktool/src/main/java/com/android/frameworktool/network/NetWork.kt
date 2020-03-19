@@ -10,16 +10,16 @@ import io.reactivex.disposables.Disposable
  * 2020/3/19
  */
 
-inline fun <reified T> Observable<Result<T>>.handleByContext(
+inline fun <reified T> Observable<T>.handleByContext(
     context: Context?,
-    crossinline success: ((Result<T>) -> Unit),
+    crossinline success: ((T) -> Unit),
     noinline errorCallback: ((Throwable) -> Boolean)? = null
 ): Disposable {
     return handle(context as? ApiRequestDisposedWatcher, success, errorCallback)
 }
 
-inline fun <reified T> Observable<Result<T>>.handle(apiRequestDisposedWatcher: ApiRequestDisposedWatcher? = null,
-                                                    crossinline success: ((Result<T>) -> Unit),
+inline fun <reified T> Observable<T>.handle(apiRequestDisposedWatcher: ApiRequestDisposedWatcher? = null,
+                                                    crossinline success: ((T) -> Unit),
                                                     noinline errorCallback: ((Throwable) -> Boolean)? = null): Disposable {
     val disposed = this
         .observeOn(AndroidSchedulers.mainThread())
