@@ -12,6 +12,7 @@
         android:layout_height="48dp"
         android:contentDescription="@null"
         android:scaleType="center"
+        android:visibility="gone"
         android:src="@mipmap/goback_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

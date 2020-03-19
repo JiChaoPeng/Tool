@@ -1,4 +1,4 @@
-package com.android.frameworktool.util
+package com.android.frameworktool.network
 
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
@@ -24,13 +24,11 @@ class NetWorkManager {
     }
 
     fun initNetWorkManager(baseUrl: String): Retrofit {
-        val okHttpClient: OkHttpClient by lazy {
-            OkHttpClient().newBuilder().apply {
-                connectTimeout(20, TimeUnit.SECONDS)
-                readTimeout(20, TimeUnit.SECONDS)
-                writeTimeout(20, TimeUnit.SECONDS)
-            }.build()
-        }
+        val okHttpClient = OkHttpClient().newBuilder().apply {
+            connectTimeout(20, TimeUnit.SECONDS)
+            readTimeout(20, TimeUnit.SECONDS)
+            writeTimeout(20, TimeUnit.SECONDS)
+        }.build()
         /**
          * 创建Retrofit实例时需要通过Retrofit.Builder,并调用baseUrl方法设置URL。
          * Retrofit2的baseUlr 必须以 /（斜线）结束，不然会抛出一个IllegalArgumentException
