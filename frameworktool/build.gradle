@@ -55,5 +55,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     // Gson
     api 'com.google.code.gson:gson:2.8.5'
-
+//1.1.0 API改动过大，老用户升级需谨慎  smartrefresh
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
 }
