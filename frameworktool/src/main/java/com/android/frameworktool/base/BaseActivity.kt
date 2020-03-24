@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.frameworktool.R
 import com.android.frameworktool.util.setStatusBarByView
 
-/**
- * Created by jichaopeng
- * 2020-02-27
- */
+
 open class BaseActivity : AppCompatActivity() {
 
     private var enterAnim: Int = R.anim.activity_common_show_by_end_anim

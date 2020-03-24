@@ -59,4 +59,7 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-11'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //MMKV数据存储
+    api 'com.tencent:mmkv-static:1.1.0'
 }
