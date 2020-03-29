@@ -4,7 +4,7 @@ import android.content.Context
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-
+const val HOST="http://39.99.210.2/"
 inline fun <reified T> Observable<T>.handleByContext(
     context: Context?,
     crossinline success: ((T) -> Unit),

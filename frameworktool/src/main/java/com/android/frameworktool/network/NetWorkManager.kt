@@ -17,6 +17,14 @@ class NetWorkManager {
                 netWorkManager!!
             }
         }
+        private var localNetWorkManager: Retrofit? = null
+        fun getLocalHostManager(): Retrofit {
+            return if (localNetWorkManager == null) {
+                NetWorkManager().initNetWorkManager(HOST)
+            } else {
+                localNetWorkManager!!
+            }
+        }
     }
 
     fun initNetWorkManager(baseUrl: String): Retrofit {
